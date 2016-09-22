@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Tbotified</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  
+</head>
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">TBotified</a>
+      <ul class="right hide-on-med-and-down">
+        
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+ 
+
+
+  <div class="container">
+  <div class="row">
+        <div class="input-field col s12">
+          <input  id="token" type="text" class="validate">
+          <label for="token">HTTP API TOKEN</label>
+        </div> 
+      </div>
+    <p><b>Недавняя активность:</b></p>
+    <ul id="log" class="collection col s12 users">
+      <li id="header_list" class="collection-item">Информация о пользователях не получена. Нажми на кнопку "Получить данные"</li>
+    </ul>
+     <button id="get_data" class="btn waves-effect waves-light">Получить Данные
+        <i class="material-icons right">send</i>
+      </button>
+
+      
+ <!-- <a id="timer" class='dropdown-button btn' href='#!' data-activates='dropdown1'>Обновление</a>
+
+   Dropdown Structure 
+  <ul id='dropdown1' class='dropdown-content'>
+    <li><a id="fsec" href="#!">5 секунд</a></li>
+    <li><a id="tsec" href="#!">10 секунд</a></li>
+    <li class="divider"></li>
+    <li><a id="no" href="#!">Не обновлять</a></li>
+  </ul>-->
+
+      <div id="result_data" style='visibility:hidden;' class="chip"></div>
+     
+      <div id="result_info" style='visibility:hidden;' class="chip"></div>
+    <div class="row"><br><br><br>
+    <form class="col s12" onsubmit="return false;">
+    <div class="row">
+          <div class="input-field col s12">
+          <input id="ChatId" type="text" class="validate">
+          <label for="ChatId">ID пользователя или UserName канала/группы</label>
+        </div>
+        </div>
+        <div class="row">
+        <div class="input-field col s12">
+          <textarea id="Message" class="materialize-textarea"></textarea>
+          <label for="Message">Сообщение</label>
+        </div>
+        
+
+
+      </div>
+      <p>Ctrl+p Для переноса строки;<br>Enter для отправки;</p>
+      <button id="sbmt" class="btn waves-effect waves-light col ">ОТПРАВИТЬ
+        <i class="material-icons right">send</i>
+      </button>
+     
+      <div id="result" style='visibility:hidden;' class="chip"></div><br><br>
+      
+    </form>
+  </div>
+  </div>
+  
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/botscript.js"></script>
+  <script src="js/logger.js" async></script>
+  <script src="js/timer.js" async></script>
+  <script>
+  $('.dropdown-button').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      constrain_width: false, // Does not change width of dropdown to that of the activator
+      hover: false, // Activate on hover
+      gutter: 0, // Spacing from edge
+      belowOrigin: false, // Displays dropdown below the button
+      alignment: 'left' // Displays dropdown with edge aligned to the left of button
+    }
+  );
+  $(document).ready(function() {
+
+  $("#Message").keyup(function(event) {
+
+  if(event.keyCode==13&&!event.shiftKey) {Send();}
+
+  });
+
+  });</script>
+  </body>
+</html>
